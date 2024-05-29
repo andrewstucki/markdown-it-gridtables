@@ -144,7 +144,7 @@ export default function parseTable(
         {
             // cell line
 
-            const matches = line.match(cellLineMatcher);
+            const matches = line.trim().match(cellLineMatcher);
 
             if (matches === null)
             {
@@ -238,8 +238,9 @@ function validateColumnWidths(
         const cell = matches[i + 1];
 
         const columnWidth = wcwidth(cell) + 1; // add 1 for separator
+        const targetWidth = columnWidths[i]
 
-        if (columnWidth !== columnWidths[i])
+        if (columnWidth !== targetWidth && cell.length+1 !== targetWidth)
         {
             return null;
         }

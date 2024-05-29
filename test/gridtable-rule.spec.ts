@@ -8,10 +8,8 @@ import { expect } from "chai";
 import readFile from './common/ReadFile';
 import gridTableRulePlugin from "../src";
 
-describe("gridtable rule", () =>
-{
-    it("should parse markdown with gridtables", () =>
-    {
+describe("gridtable rule", () => {
+    it("should parse markdown with gridtables", () => {
         const md = MarkdownIt();
 
         md.use(gridTableRulePlugin);
@@ -25,8 +23,7 @@ describe("gridtable rule", () =>
         expect(actual).to.equal(expected);
     });
 
-    it("should parse gridtables with column alignments", () =>
-    {
+    it("should parse gridtables with column alignments", () => {
         const md = MarkdownIt();
 
         md.use(gridTableRulePlugin);
@@ -40,8 +37,7 @@ describe("gridtable rule", () =>
         expect(actual).to.equal(expected);
     });
 
-    it("should handle invalid input", () =>
-    {
+    it("should handle invalid input", () => {
         const md = MarkdownIt();
 
         md.use(gridTableRulePlugin);
@@ -55,8 +51,7 @@ describe("gridtable rule", () =>
         expect(actual).to.equal(expected);
     });
 
-    it("should parse tables with links", () =>
-    {
+    it("should parse tables with links", () => {
         const md = MarkdownIt();
 
         md.use(gridTableRulePlugin);
@@ -70,8 +65,7 @@ describe("gridtable rule", () =>
         expect(actual).to.equal(expected);
     });
 
-    it("should parse tables with multi-column characters", () =>
-    {
+    it("should parse tables with multi-column characters", () => {
         const md = MarkdownIt();
 
         md.use(gridTableRulePlugin);
